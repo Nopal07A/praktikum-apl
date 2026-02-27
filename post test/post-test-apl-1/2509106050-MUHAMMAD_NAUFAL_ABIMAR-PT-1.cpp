@@ -23,7 +23,7 @@ int main() {
     }
 
     if (kesempatan == 3) {
-        cout << "password atau ussername anda salah." << endl;
+        cout << "Username atau password salah." << endl;
         return 0;
     }
 
@@ -40,25 +40,25 @@ int main() {
         cin >> pilihan;
 
         if (pilihan == 1) {
-            int jam;
+            float jam;
             cout << "Masukkan jam: ";
             cin >> jam;
             cout << "Menit : " << jam * 60 << endl;
             cout << "Detik : " << jam * 3600 << endl;
         }
         else if (pilihan == 2) {
-            int menit;
+            float menit;
             cout << "Masukkan menit: ";
             cin >> menit;
-            cout << "Jam   : " << menit / 60 << endl;
+            cout << "Jam   : " << menit / 60.0f << endl;
             cout << "Detik : " << menit * 60 << endl;
         }
         else if (pilihan == 3) {
-            int detik;
+            float detik;
             cout << "Masukkan detik: ";
             cin >> detik;
-            cout << "Jam   : " << detik / 3600 << endl;
-            cout << "Menit : " << detik / 60 << endl;
+            cout << "Jam   : " << detik / 3600.0f << endl;
+            cout << "Menit : " << detik / 60.0f << endl;
         }
         else if (pilihan == 4) {
             cout << "Terima kasih" << endl;
