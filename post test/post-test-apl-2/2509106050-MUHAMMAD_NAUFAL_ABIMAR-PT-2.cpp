@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 struct Hero{
@@ -33,14 +34,13 @@ bool login(){
         cin>>password;
 
         if(username == "050" && password == "050"){
-            cout<<"Login berhasil!\n";
+            cout<<"Login berhasil!"<<endl;
             return true;
         }
 
         percobaan++;
 
         cout<<"Login gagal! Sisa percobaan "<<3-percobaan<<endl;
-
     }
 
     return false;
@@ -48,7 +48,7 @@ bool login(){
 
 int tambahHero(){
 
-    cout<<"\n=== TAMBAH HERO ==="<<endl;
+    cout<<endl<<"=== TAMBAH HERO ==="<<endl;
 
     cout<<"Nama Hero : ";
     cin>>hero[jumlahHero].nama;
@@ -66,16 +66,23 @@ int tambahHero(){
 
 int lihatHero(){
 
-    cout<<"\n=== DATA HERO ==="<<endl;
+    cout<<endl<<"=== DATA HERO ==="<<endl;
+
+    cout<<"+----+---------------+---------------+-----------+"<<endl;
+    cout<<"| No | Nama Hero     | Role          | Kesulitan |"<<endl;
+    cout<<"+----+---------------+---------------+-----------+"<<endl;
 
     for(int i=0;i<jumlahHero;i++){
 
-        cout<<i+1<<". "
-            <<hero[i].nama<<" | "
-            <<hero[i].role<<" | "
-            <<"Kesulitan: "<<hero[i].kesulitan<<endl;
+        cout<<"| "<<setw(2)<<i+1<<" "
+            <<"| "<<setw(13)<<left<<hero[i].nama
+            <<"| "<<setw(13)<<left<<hero[i].role
+            <<"| "<<setw(9)<<left<<hero[i].kesulitan
+            <<"|"<<endl;
 
     }
+
+    cout<<"+----+---------------+---------------+-----------+"<<endl;
 
     return 0;
 }
@@ -127,7 +134,8 @@ int main(){
 
     if(login()==false){
 
-        cout<<"Program berhenti karena gagal login 3 kali";
+        cout<<"Program berhenti karena gagal login 3 kali"<<endl;
+
         return 0;
     }
 
@@ -135,7 +143,8 @@ int main(){
 
     do{
 
-        cout<<"\n=== MENU HERO MOBILE LEGENDS ==="<<endl;
+        cout<<endl<<"=== MENU HERO MOBILE LEGENDS ==="<<endl;
+
         cout<<"1. Tambah Hero"<<endl;
         cout<<"2. Lihat Hero"<<endl;
         cout<<"3. Ubah Hero"<<endl;
